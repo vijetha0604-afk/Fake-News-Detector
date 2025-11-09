@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fake News Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Background shapes -->
+  <div class="bg-shape shape1"></div>
+  <div class="bg-shape shape2"></div>
+  <div class="bg-shape shape3"></div>
+
+  <header class="navbar">
+    <div class="logo">
+      <img src="{{ url_for('static', filename='logo.png') }}" width="40">
+      <span>Fake News Detection</span>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Uncover the Truth Behind Every Headline</h1>
+    <p class="tagline">AI-powered Fake News Detector</p>
+
+    <form id="newsForm" action="/predict" method="post" class="detect-form">
+      <textarea name="news" placeholder="Paste your news article or headline here..." required></textarea>
+      <button type="submit" class="glow-btn">🚀 Detect Fake News</button>
+    </form>
+
+    <!-- Loader -->
+    <div id="loader" class="loader-overlay" style="display:none;">
+      <div class="spinner"></div>
+      <p>Analyzing your news with AI...</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Fake News Detection | Built by Vijetha Naik</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById("newsForm");
+    const loader = document.getElementById("loader");
+    form.addEventListener("submit", () => {
+      loader.style.display = "flex";
+    });
+  </script>
+</body>
+</html>

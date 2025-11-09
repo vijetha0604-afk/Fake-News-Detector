@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Result | Fake News Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="bg-shape shape1"></div>
+  <div class="bg-shape shape2"></div>
+
+  <section class="result-box">
+    {% if label == 'Fake' %}
+      <h1 class="fake">🚨 Fake News Detected!</h1>
+    {% else %}
+      <h1 class="real">✅ This News Appears Genuine!</h1>
+    {% endif %}
+    <p>Confidence: {{ confidence }}%</p>
+    <a href="/" class="glow-btn">🔁 Try Another</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fake News Detection | Built by Vijetha Naik</p>
+  </footer>
+</body>
+</html>
